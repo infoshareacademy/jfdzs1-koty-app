@@ -10,6 +10,9 @@ class Login extends PureComponent {
         password:'',
     }
 
+    onSubmit =()=>{
+        console.log(this.state)
+    }
     render() {
         return (
             <div>
@@ -20,8 +23,9 @@ class Login extends PureComponent {
                            value={this.state.lastName}/>
                     <input placeholder='userName'
                            value={this.state.userName}/>
-                    <input placeholder='password'
+                    <input  type="password" placeholder='password'
                            value={this.state.password}/>
+                    <button onClick={( this.onSubmit())}>Submit</button>
                 </form>
             </div>
 
