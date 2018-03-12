@@ -1,10 +1,15 @@
 import React, {PureComponent} from 'react';
+import './Login.style.css';
 
 
 class Login extends PureComponent {
     render() {
         return (
-            <div>Login</div>
+            <div>
+                <form>
+                    
+                </form>
+            </div>
 
         );
     }
