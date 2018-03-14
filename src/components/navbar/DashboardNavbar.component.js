@@ -1,48 +1,46 @@
 import React, {PureComponent} from 'react';
-// import PropTypes from 'prop-types';
-import 'bootstrap/dist/css/bootstrap.css';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import PropTypes from 'prop-types';
+import './DashboardNavbar.style.css';
+import Menu from "./Menu.component";
 
 
 
-class DashboardNavbar extends PureComponent {
 
+
+class Navbar extends PureComponent {
 
     constructor(props) {
         super(props);
-
-        this.toggleNavbar = this.toggleNavbar.bind(this);
         this.state = {
-            collapsed: true
+            showMenu: false
         };
     }
 
-    toggleNavbar() {
+    static propTypes = {
+        text: PropTypes.string
+    };
+
+    static defaultProps = {
+        text: "mój domyślny text",
+    };
+
+    handleOnClick = () => {
         this.setState({
-            collapsed: !this.state.collapsed
-        });
-    }
+            showMenu: !this.state.showMenu
+        })
+    };
+
     render() {
         return (
-            <div>
-                <div>{this.props.text}</div>
-                <Navbar color="faded" light>
-                    <NavbarBrand href="/" className="mr-auto">Dashboard</NavbarBrand>
-                    <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-                    <Collapse isOpen={!this.state.collapsed} navbar>
-                        <Nav navbar>
-                            <NavItem>
-                                <NavLink href="/dasboard">Dashboard</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/login">Logout</NavLink>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
-            </div>
+            <nav className="Navbar">
+                <p>{this.props.text}</p>
+                <Menu
+                    taggleMenu={this.handleOnClick}
+                    display={this.state.showMenu}
+                />
+            </nav>
         );
     }
 }
 
-export default DashboardNavbar;
+export default Navbar;

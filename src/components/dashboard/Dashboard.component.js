@@ -1,12 +1,13 @@
 import React, {PureComponent} from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import DashboardNavbar from "../navbar/DashboardNavbar.component";
+import Navbar from "../navbar/DashboardNavbar.component";
+
 
 
 class Dashboard extends PureComponent {
-    render() {
+
+   render() {
         return (
-            <DashboardNavbar text='hi'/>
+            <Navbar text="Witaj!"/>
         );
     }
 }
