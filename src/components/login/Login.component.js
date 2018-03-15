@@ -8,14 +8,28 @@ export default class Login extends PureComponent {
         lastName: '',
         userName:'',
         password:'',
-    }
+    };
 
-    onSubmit =(e)=>{
+    onSubmit = e => {
         e.preventDefault();
-    }
-
-    }
-    render(){
+        // this.props.onSubmit(this.state);
+        this.setState({
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            password: ""
+        });
+        this.props.onChange({
+            firstName: "",
+            lastName: "",
+            username: "",
+            email: "",
+            password: ""
+        });
+    };
+    render()
+    {
     return(
         <div>
         <form>
@@ -32,7 +46,7 @@ export default class Login extends PureComponent {
         <input type="password" placeholder='password'
                            value={this.state.password}/>
         <br>
-        <button onClick={(e) => this.onSubmit(event)}>Submit</button>
+        <button onClick={(e) => this.onSubmit(e)}>Submit</button>
 
         </form>
     </div>
