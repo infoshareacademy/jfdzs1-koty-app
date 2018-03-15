@@ -84,5 +84,3 @@ export default class Login extends PureComponent {
         );
     }
 }
-
-export default Login;
