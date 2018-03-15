@@ -37,31 +37,51 @@ export default class Login extends PureComponent {
     };
 
 
-}
+    render() {
+        return (
+            <div>
+                <form>
+                <input
+                    name="firstName"
+                    placeholder="First name"
+                    value={this.state.firstName}
+                    onChange={e => this.change(e)}
+                />
+                <br />
+                <input
+                    name="lastName"
+                    placeholder="Last name"
+                    value={this.state.lastName}
+                    onChange={e => this.change(e)}
+                />
+                <br />
+                <input
+                    name="username"
+                    placeholder="Username"
+                    value={this.state.username}
+                    onChange={e => this.change(e)}
+                />
+                <br />
+                <input
+                    name="email"
+                    placeholder="Email"
+                    value={this.state.email}
+                    onChange={e => this.change(e)}
+                />
+                <br />
+                <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    value={this.state.password}
+                    onChange={e => this.change(e)}
+                />
+                <br />
+                <button onClick={e => this.onSubmit(e)}>Submit</button>
+               </form>
+          </div>
 
-
-    render(){
-    return(
-        <div>
-        <form>
-            <br>
-        <input placeholder='First Name'
-               value={this.state.firstName}/>
-        <br>
-        <input placeholder='Last Name'
-                   value={this.state.lastName}/>
-        <br>
-        <input placeholder='userName'
-                       value={this.state.userName}/>
-        <br>
-        <input type="password" placeholder='password'
-                           value={this.state.password}/>
-        <br>
-        <button onClick={(e) => this.onSubmit(e)}>Submit</button>
-
-        </form>
-    </div>
-      );
+        );
     }
 }
 

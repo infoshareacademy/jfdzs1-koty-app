@@ -3,14 +3,30 @@ import './App.css';
 import './Login.component.js';
 
 class App extends Component {
+    state = {
+        fields: {}
+    };
 
-  render() {
-    return (
-      <div className="App">
-        <Form onSubmit={fields => this.onSubmit } />
-      </div>
-    );
-  }
+    onChange = updatedValue => {
+        this.setState({
+            fields: {
+                this.state.fields,
+                updatedValue
+            }
+        });
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <Form onChange={fields => this.onChange(fields)} />
+                <p>
+                    {JSON.stringify(this.state.fields, null, 2)}
+                </p>
+            </div>
+        );
+    }
+
 }
 
 export default App;
