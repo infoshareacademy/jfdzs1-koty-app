@@ -10,6 +10,13 @@ export default class Login extends PureComponent {
         password:'',
     };
 
+    change = e => {
+    this.props.onchange({[e.target.name]: e.target.value});
+    this.setState({
+    [e.target.name]: e.target.value
+    });
+    };
+
     onSubmit = e => {
         e.preventDefault();
         // this.props.onSubmit(this.state);
@@ -28,8 +35,12 @@ export default class Login extends PureComponent {
             password: ""
         });
     };
-    render()
-    {
+
+
+}
+
+
+    render(){
     return(
         <div>
         <form>
