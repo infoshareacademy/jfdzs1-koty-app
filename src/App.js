@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Form onSubmit={fields => } />
+        <Form onSubmit={fields => this.onSubmit } />
       </div>
     );
   }
