@@ -1,4 +1,5 @@
 import React, {PureComponent} from 'react';
+import { Link } from 'react-router-dom';
 import './Menu.style.css';
 
 
@@ -13,9 +14,9 @@ class Menu extends PureComponent {
                     <div className="burger"> </div>
 
                 <div className={this.props.display ? "active" : "hide"}>
-                    <a className='menu-links'>Ulubione</a>
-                    <a className='menu-links'>Wyszukaj</a>
-                    <a className='menu-links'>Home</a>
+                    <Link className='menu-links' to="">Ulubione</Link>
+                    <Link className='menu-links' to='/dashboard'>Home</Link>
+                    <Link className='menu-links' to='/login'>Wyloguj</Link>
                 </div>
             </div>
         );
