@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react';
-import './Login.style.css';
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
 
-
-export default class Login extends PureComponent {
+export default class Login extends React.PureComponent {
     state = {
         firstName: '',
         lastName: '',
@@ -14,12 +14,12 @@ export default class Login extends PureComponent {
     this.props.onchange({[e.target.name]: e.target.value});
     this.setState({
     [e.target.name]: e.target.value
-    });
+      });
     };
 
     onSubmit = e => {
         e.preventDefault();
-        // this.props.onSubmit(this.state);
+
         this.setState({
             firstName: "",
             lastName: "",
@@ -39,47 +39,55 @@ export default class Login extends PureComponent {
 
     render() {
         return (
-            <div>
                 <form>
-                <input
-                    name="firstName"
-                    placeholder="First name"
-                    value={this.state.firstName}
-                    onChange={e => this.change(e)}
-                />
+                    <TextField
+                        name= "firstName"
+                        hintText="First Name"
+                        floatingLabelText="First name"
+                        value = {this.state.firstName}
+                        onChange={e => this.change(e)}
+                        floatingLabelFixed
+                    />
+
                 <br />
-                <input
-                    name="lastName"
-                    placeholder="Last name"
-                    value={this.state.lastName}
-                    onChange={e => this.change(e)}
-                />
+                    <TextField
+                        name= "lastName"
+                        hintText="Last Name"
+                        floatingLabelText="Last name"
+                        value = {this.state.lastName}
+                        onChange={e => this.change(e)}
+                        floatingLabelFixed
+                    />
                 <br />
-                <input
-                    name="username"
-                    placeholder="Username"
-                    value={this.state.username}
-                    onChange={e => this.change(e)}
-                />
+                    <TextField
+                        name= "username"
+                        hintText="Username"
+                        floatingLabelText="Username"
+                        value = {this.state.userName}
+                        onChange={e => this.change(e)}
+                        floatingLabelFixed
+                    />
                 <br />
-                <input
-                    name="email"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={e => this.change(e)}
-                />
-                <br />
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={e => this.change(e)}
-                />
-                <br />
-                <button onClick={e => this.onSubmit(e)}>Submit</button>
-               </form>
-          </div>
+                    <TextField
+                        name= "email"
+                        hintText="email"
+                        floatingLabelText="email"
+                        value = {this.state.email}
+                        onChange={e => this.change(e)}
+                        floatingLabelFixed
+                    />
+                    <TextField
+                        name= "password"
+                        hintText="password"
+                        floatingLabelText="password"
+                        value = {this.state.password}
+                        onChange={e => this.change(e)}
+                        floatingLabelFixed
+                    />
+                    <br />
+                    <RaisedButton label="Submit" onClick={e => this.onSubmit(e)}secondary />
+                </form>
+
 
         );
     }
