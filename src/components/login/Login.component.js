@@ -87,8 +87,6 @@ export default class Login extends React.PureComponent {
                     <br />
                     <RaisedButton label="Submit" onClick={e => this.onSubmit(e)}secondary />
                 </form>
-
-
         );
     }
 }
