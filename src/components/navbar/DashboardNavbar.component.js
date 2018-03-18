@@ -4,6 +4,8 @@ import './DashboardNavbar.style.css';
 import Menu from "./Menu.component";
 
 
+
+
 class Navbar extends PureComponent {
 
     constructor(props) {
@@ -29,13 +31,12 @@ class Navbar extends PureComponent {
 
     render() {
         return (
-            <nav className="Navbar">
-                <p>{this.props.text}</p>
+            <div>
                 <Menu
                     taggleMenu={this.handleOnClick}
                     display={this.state.showMenu}
                 />
-            </nav>
+            </div>
         );
     }
 }

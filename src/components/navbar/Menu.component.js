@@ -1,23 +1,30 @@
 import React, {PureComponent} from 'react';
 import { Link } from 'react-router-dom';
+import Drawer from 'material-ui/Drawer';
+import MenuItem from 'material-ui/MenuItem';
+import AppBar from 'material-ui/AppBar';
 import './Menu.style.css';
-
 
 
 class Menu extends PureComponent {
     render() {
         return (
-            <div className="burger-menu" onClick={this.props.taggleMenu}>
 
-                    <div className="burger"> </div>
-                    <div className="burger"> </div>
-                    <div className="burger"> </div>
+            <div>
+                <AppBar
+                    title="Menu"
+                    onLeftIconButtonClick={this.props.taggleMenu}>
+                    <p>Witaj!</p>
 
-                <div className={this.props.display ? "active" : "hide"}>
-                    <Link className='menu-links' to="">Ulubione</Link>
-                    <Link className='menu-links' to='/dashboard'>Home</Link>
-                    <Link className='menu-links' to='/login'>Wyloguj</Link>
-                </div>
+                </AppBar>
+                <Drawer
+                    open={this.props.display}
+                    onRequestChange={this.props.taggleMenu}
+                    docked={false}
+                    width={200}>
+                    <MenuItem><Link to="/login">Login</Link></MenuItem>
+                    <MenuItem>Menu Item 2</MenuItem>
+                </Drawer>
             </div>
         );
     }

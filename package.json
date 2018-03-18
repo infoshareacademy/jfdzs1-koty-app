@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0",
     "gravatar-url": "^2.0.0",
     "react": "^16.2.0",
     "react-burger-menu": "^2.3.0",
