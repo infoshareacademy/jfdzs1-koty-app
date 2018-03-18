@@ -18,13 +18,8 @@ class Login extends PureComponent {
 
     onSubmit = e => {
         e.preventDefault();
-
-        this.setState({
-            email: "",
-            password: ""
-        });
+        //todo login authorization
     };
-
 
     render() {
         return (
@@ -36,29 +31,26 @@ class Login extends PureComponent {
                             hintText="email"
                             floatingLabelText="email"
                             value={this.state.email}
-                            onChange={e => this.change(e)}
+                            onChange={this.change}
                             floatingLabelFixed
                         />
                     </div>
-
                     <div>
                         <TextField
                         name="password"
                         hintText="password"
                         floatingLabelText="password"
                         value={this.state.password}
-                        onChange={e => this.change(e)}
+                        onChange={this.change}
                         floatingLabelFixed
                     />
                     </div>
-
                     <div>
-                        <RaisedButton label="Submit" onClick={e => this.onSubmit(e)}secondary />
+                        <RaisedButton className="login-form__button" label="Submit" onClick={e => this.onSubmit(e)}secondary />
                     </div>
-
                 </form>
             </MuiThemeProvider>
-                );
+        );
     }
 }
 export default Login
