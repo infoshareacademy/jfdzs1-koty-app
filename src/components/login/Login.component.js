@@ -26,6 +26,8 @@ class Login extends PureComponent {
             <MuiThemeProvider>
                 <form className="login-form">
                     <div>
+                        <img className="login-form_img" alt="" src="resources/images/logo.svg" />
+                        <h1> Sign in </h1>
                         <TextField
                             name="email"
                             hintText="email"
