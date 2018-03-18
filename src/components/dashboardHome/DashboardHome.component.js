@@ -11,7 +11,6 @@ const style = {
     display: 'inline-block',
 };
 
-
 class DashboardHome extends PureComponent {
     render() {
 
@@ -21,12 +20,10 @@ class DashboardHome extends PureComponent {
             { name: 'c', value: 120 }
         ]
 
-
         return (
             <Grid middle="xs" fluid>
                 <Row className="home-row" center="xs" around="xs">
                     <Col className="home-items" xs={5}>
-
                         <LineChart width={530} height={200} data={data}
                                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                             <CartesianGrid strokeDasharray="3 3" />
@@ -37,7 +34,6 @@ class DashboardHome extends PureComponent {
                             <Line type="monotone" dataKey="pv" stroke="red" />
                             <Line type="monotone" dataKey="uv" stroke="red" />
                         </LineChart>
-
                     </Col>
                     <Col className="home-items" xs={5}>
 
