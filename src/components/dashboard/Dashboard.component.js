@@ -2,10 +2,10 @@ import React, {PureComponent} from 'react';
 
 
 class Dashboard extends PureComponent {
-    render() {
+
+   render() {
         return (
             <div>Dashboard</div>
-
         );
     }
 }
