@@ -3,7 +3,10 @@ import './Form.style.css';
 
 class Form extends PureComponent {
     constructor(){
-        super()
+        super();
+        this.state= {
+            search: 'add'
+        };
     }
 
 
@@ -13,7 +16,7 @@ class Form extends PureComponent {
              <ul>
 
              </ul>
-             <input type="text" defaultValue={this.state.search}/>
+             <input type="text" Value={this.state.search}/>
          </div>
      )
  }
