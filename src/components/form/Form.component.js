@@ -8,7 +8,7 @@ class Form extends PureComponent {
              <ul>
 
              </ul>
-             <input/>
+             <input type="text" value="add"/>
          </div>
      )
  }
