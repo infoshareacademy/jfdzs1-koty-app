@@ -1,9 +1,6 @@
 import React, {PureComponent} from 'react';
-import PropTypes from 'prop-types';
 import './DashboardNavbar.style.css';
 import Menu from "./Menu.component";
-
-
 
 
 class Navbar extends PureComponent {
@@ -14,14 +11,6 @@ class Navbar extends PureComponent {
             showMenu: false
         };
     }
-
-    static propTypes = {
-        text: PropTypes.string
-    };
-
-    static defaultProps = {
-        text: "mój domyślny text",
-    };
 
     handleOnClick = () => {
         this.setState({
