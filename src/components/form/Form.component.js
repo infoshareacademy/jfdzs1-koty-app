@@ -20,11 +20,10 @@ class Form extends PureComponent {
              <ul>
 
              </ul>
-             <input type="text" value={this.state.search.bind(this)}
-             onChange={this.updateSearch}/>
+             <input type="text" value={this.state.search}
+             onChange={this.updateSearch.bind(this)}/>
          </div>
      )
  }
 
-}
-export default Form;
+}export default Form;
