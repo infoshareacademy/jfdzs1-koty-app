@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import './Form.style.css';
 
 class Form extends PureComponent {
+
     constructor(){
         super();
         this.state= {
@@ -9,6 +10,9 @@ class Form extends PureComponent {
         };
     }
 
+    updateSearch(event){
+        this.setState({search:event.target.value});
+    };
 
  render (){
      return(
@@ -16,7 +20,8 @@ class Form extends PureComponent {
              <ul>
 
              </ul>
-             <input type="text" Value={this.state.search}/>
+             <input type="text" value={this.state.search.bind(this)}
+             onChange={this.updateSearch}/>
          </div>
      )
  }
