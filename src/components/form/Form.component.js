@@ -8,10 +8,10 @@ class Form extends PureComponent {
              <ul>
 
              </ul>
-             <input type="text" value="add"/>
+             <input type="text" defaultValue=""/>
          </div>
      )
  }
 
 }
-export default Form
+export default Form;
