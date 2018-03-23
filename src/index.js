@@ -4,14 +4,14 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import './index.css';
 import Dashboard from './components/dashboard/Dashboard.component';
 import Login from './components/login/Login.component';
-import Form from './components/form/Form.component;'
+import Form from './components/form/Form.component';
 
 const form = false;
 
 ReactDOM.render(
     <BrowserRouter>
         <div>
-            <Route exact path='/' component={login ? Dashboard : Login}/>
+            <Route exact path='/' component={login ?  Dashboard : Login}/>
             <Route path='/dashboard' component={Dashboard}/>
             <Route path='/login' component={Login}/>
             <Route path='/form' component={Form}/>
