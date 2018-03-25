@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import './DashboardHome.style.css';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend, ComposedChart, Area, Bar } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 const style = {
     height: 100,

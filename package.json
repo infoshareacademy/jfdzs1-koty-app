@@ -3,18 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gravatar-url": "^2.0.0",
     "material-ui": "^0.20.0",
     "react": "^16.2.0",
+    "react-burger-menu": "^2.3.0",
     "react-dom": "^16.2.0",
     "react-flexbox-grid": "^2.0.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "0.9.5",
-    "recharts": "^1.0.0-beta.10"
+    "reactstrap": "^5.0.0-beta.2",
+    "recharts": "^1.0.0-beta.10",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-react": "^0.78.3"
   },
-  "devDependencies": {
-    "css-loader": "^0.28.11",
-    "style-loader": "^0.20.3"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

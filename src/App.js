@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route} from 'react-router-dom';
+import DashboardHome from './components/dashboardHome/DashboardHome.component';
+import Login from './components/login/Login.component';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Navbar from "./components/navbar/DashboardNavbar.component";
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+        <MuiThemeProvider>
+            <BrowserRouter>
+                <div className="App">
+                    <Navbar/>
+                      <Route exact path='/' component={DashboardHome}/>
+                      <Route path='/login' component={Login}/>
+                </div>
+            </BrowserRouter>
+        </MuiThemeProvider>
     );
   }
 }
