@@ -1,4 +1,4 @@
-import { SET_GRANTS, ERROR_GRANTS } from './List.types';
+import { SET_GRANTS, ERROR_GRANTS } from '../../types/types'
 
 const grantsList = (state = [], action) => {
     switch(action.type) {

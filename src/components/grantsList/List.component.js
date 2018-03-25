@@ -1,10 +1,9 @@
 import React from 'react'
 
+
 const GrantsComponent = ({ getGrants, grants }) => {
-    getGrants();
-    console.log('dupa');
+    getGrants(grants);
     if(grants) {
-        console.log(grants);
         return (
             <section className="user">
                 <ul>{grants.map((grant, index) =>
@@ -14,7 +13,7 @@ const GrantsComponent = ({ getGrants, grants }) => {
                     )}
                 </ul>
             </section>
-        );
+        )
     } else {
         return (
             <section>

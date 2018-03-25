@@ -20,11 +20,9 @@ export const getGrants = () => {
     const url = 'https://unijne-dotacje.firebaseio.com/grants.json';
     return (dispatch) => {
         fetch(url)
-            .then(result => result.json)
+            .then(result => result.json())
             .then(Object.values)
             .then(fetchedData => dispatch(setGrants(fetchedData)))
-
-            // .then(result => dispatch(setGrants(result.json)))
             .catch(error => dispatch(errorGrants('Unable to show the list')))
-    }
+    };
 };

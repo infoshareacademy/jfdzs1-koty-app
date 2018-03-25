@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { getGrants } from './List.types';
+import { getGrants } from './List.action';
 
 import GrantsComponent from './List.component';
 

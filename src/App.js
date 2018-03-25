@@ -16,7 +16,7 @@ class App extends Component {
                     <Navbar/>
                       <Route exact path='/' component={Dashboard}/>
                       <Route path='/login' component={Login}/>
-                      <Route path='/grants' component={GrantsList} />
+                      <Route path='/grants' component={GrantsList}/>
                 </div>
             </BrowserRouter>
         </MuiThemeProvider>
