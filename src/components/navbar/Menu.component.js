@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
-import './Menu.style.css';
+import styles from "../../Styles";
 
 
 class Menu extends PureComponent {
@@ -13,17 +13,17 @@ class Menu extends PureComponent {
             <div>
                 <AppBar
                     title="Menu"
-                    onLeftIconButtonClick={this.props.taggleMenu}>
-                    <p>Witaj!</p>
-
+                    onLeftIconButtonClick={this.props.taggleMenu}
+                    style={styles.appBar}>
                 </AppBar>
                 <Drawer
                     open={this.props.display}
                     onRequestChange={this.props.taggleMenu}
                     docked={false}
-                    width={200}>
+                    width={200}
+                    style={styles.sideBar}>
                     <MenuItem><Link to="/login">Login</Link></MenuItem>
-                    <MenuItem>Menu Item 2</MenuItem>
+                    <MenuItem>Lista ulubionych</MenuItem>
                 </Drawer>
             </div>
         );
