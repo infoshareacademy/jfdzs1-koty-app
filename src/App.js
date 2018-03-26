@@ -1,37 +1,24 @@
 import React, { Component } from 'react';
-import "./App.css";
-import './Login.component.js';
+
+import {BrowserRouter, Route} from 'react-router-dom';
+import Dashboard from './components/dashboard/Dashboard.component';
+import Login from './components/login/Login.component';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import Navbar from "./components/navbar/DashboardNavbar.component";
+
+
 class App extends Component {
-    state = {
-        fields: {}
-    };
-
-    onChange = updatedValue => {
-        this.setState({
-            ...fields:{
-            ...this.state.fields,
-                updatedValue
-            }
-        })
-    };
-
-    render() {
-        return (
+  render() {
+    return (
         <MuiThemeProvider>
-            <div className="App">
-                <Form onChange={fields => this.onChange(fields)} />
-                <p>
-                    {JSON.stringify(this.state.fields, null, 2)}
-                </p>
-            </div>
+            <BrowserRouter>
+                <div className="App">
+                    <Navbar/>
+                      <Route exact path='/' component={Dashboard}/>
+                      <Route path='/login' component={Login}/>
+                </div>
+            </BrowserRouter>
         </MuiThemeProvider>
 
 
-        );
-    }
-
-}
-injectTapEventPlugin();
-export default App;
+export default App
