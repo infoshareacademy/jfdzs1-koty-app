@@ -1,25 +1,32 @@
-import React from 'react'
+import React, {PureComponent} from 'react';
 
 
-const GrantsComponent = ({ getGrants, grants }) => {
-    getGrants(grants);
-    if(grants) {
-        return (
-            <section className="user">
-                <ul>{grants.map((grant, index) =>
+class GrantsComponent extends PureComponent {
+    componentWillMount() {
+        super.componentDidMount && super.componentDidMount();
+        this.props.getGrants();
+    }
+
+    render() {
+        const {grants} = this.props;
+        if (grants) {
+            return (
+                <section className="user">
+                    <ul>{grants.map((grant, index) =>
                         <li key={index}>
-                            {grant.value}
+                            {grant.name}
                         </li>
                     )}
-                </ul>
-            </section>
-        )
-    } else {
-        return (
-            <section>
-            </section>
-        )
-    }
-};
+                    </ul>
+                </section>
+            )
+        } else {
+            return (
+                <section>
+                </section>
+            )
+        }
 
+    }
+}
 export default GrantsComponent;
