@@ -14,12 +14,12 @@ export default {
         fontFamily: appFont,
         color: appColors.dark
     },
-    // flexCenter: {
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     flexDirection: 'column'
-    // },
+    grantsList: {
+        fontSize: '1.5em',
+        width: '60vw',
+        marginLeft: '20vw',
+        marginTop:'5vh'
+    },
     // centerItalic: {
     //     textAlign: 'center',
     //     fontStyle: 'italic'

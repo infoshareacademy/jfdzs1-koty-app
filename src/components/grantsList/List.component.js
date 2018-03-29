@@ -1,5 +1,11 @@
 import React, {PureComponent} from 'react';
-
+import {List, ListItem} from 'material-ui/List';
+import ActionInfo from 'material-ui/svg-icons/action/info';
+import Avatar from 'material-ui/Avatar';
+import ActionAssignment from 'material-ui/svg-icons/action/assignment';
+import Subheader from 'material-ui/Subheader';
+import styles from "../../Styles";
+import { appColors } from "../../Styles";
 
 class GrantsComponent extends PureComponent {
     componentWillMount() {
@@ -11,14 +17,22 @@ class GrantsComponent extends PureComponent {
         const {grants} = this.props;
         if (grants) {
             return (
-                <section className="user">
-                    <ul>{grants.map((grant, index) =>
-                        <li key={index}>
-                            {grant.name}
-                        </li>
-                    )}
-                    </ul>
-                </section>
+                    <List >
+                        <Subheader inset={true}
+                                   style={styles.grantsList}>
+                                    Lista dotacji
+                        </Subheader>
+                        {grants.map((grant, index) =>
+                            <ListItem
+                                key={index}
+                                leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
+                                rightIcon={<ActionInfo />}
+                                primaryText={grant.name}
+                                secondaryText={`Odbiorca: ${grant.recipient}`}
+                                style={styles.grantsList}
+                            />
+                        )}
+                    </List>
             )
         } else {
             return (
