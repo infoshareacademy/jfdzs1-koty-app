@@ -3,6 +3,7 @@ export const appColors = {
     blue: '#0F3F76',
     lightBlue: '#03A687',
     grey: '#BCBEC0',
+    lightGray: '#f0f3f5',
     dark: '#333333'
 
 };
@@ -18,7 +19,8 @@ export default {
         fontSize: '1.5em',
         width: '60vw',
         marginLeft: '20vw',
-        marginTop:'5vh'
+        marginTop:'5vh',
+        color: appColors.dark
     },
     // centerItalic: {
     //     textAlign: 'center',

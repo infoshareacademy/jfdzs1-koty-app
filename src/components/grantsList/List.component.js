@@ -17,10 +17,10 @@ class GrantsComponent extends PureComponent {
         const {grants} = this.props;
         if (grants) {
             return (
-                    <List >
+                    <List>
                         <Subheader inset={true}
                                    style={styles.grantsList}>
-                                    Lista dotacji
+                                    LISTA DOTACJI
                         </Subheader>
                         {grants.map((grant, index) =>
                             <ListItem
