@@ -3,6 +3,7 @@ export const appColors = {
     blue: '#0F3F76',
     lightBlue: '#03A687',
     grey: '#BCBEC0',
+    lightGray: '#f0f3f5',
     dark: '#333333'
 
 };
@@ -14,12 +15,13 @@ export default {
         fontFamily: appFont,
         color: appColors.dark
     },
-    // flexCenter: {
-    //     display: 'flex',
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     flexDirection: 'column'
-    // },
+    grantsList: {
+        fontSize: '1.5em',
+        width: '60vw',
+        marginLeft: '20vw',
+        marginTop:'5vh',
+        color: appColors.dark
+    },
     // centerItalic: {
     //     textAlign: 'center',
     //     fontStyle: 'italic'

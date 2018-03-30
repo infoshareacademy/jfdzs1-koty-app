@@ -5,7 +5,6 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import styles from "../../Styles";
 
-
 class Menu extends PureComponent {
     render() {
         return (
@@ -23,7 +22,7 @@ class Menu extends PureComponent {
                     width={200}
                     style={styles.sideBar}>
                     <MenuItem><Link to="/login">Login</Link></MenuItem>
-                    <MenuItem>Lista ulubionych</MenuItem>
+                    <MenuItem><Link to="/grants">Lista dotacji</Link></MenuItem>
                 </Drawer>
             </div>
         );

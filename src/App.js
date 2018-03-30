@@ -4,6 +4,7 @@ import Dashboard from './components/dashboard/Dashboard.component';
 import Login from './components/login/Login.component';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Navbar from "./components/navbar/DashboardNavbar.component";
+import GrantsList from "./components/grantsList/List.container";
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
                     <Navbar/>
                       <Route exact path='/' component={Dashboard}/>
                       <Route path='/login' component={Login}/>
+                      <Route path='/grants' component={GrantsList}/>
                 </div>
             </BrowserRouter>
         </MuiThemeProvider>
