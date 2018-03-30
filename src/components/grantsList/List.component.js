@@ -12,7 +12,6 @@ class GrantsComponent extends PureComponent {
         super.componentDidMount && super.componentDidMount();
         this.props.getGrants();
     }
-
     render() {
         const {grants} = this.props;
         if (grants) {

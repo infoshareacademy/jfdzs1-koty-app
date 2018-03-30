@@ -5,7 +5,6 @@ import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
 import styles from "../../Styles";
 
-
 class Menu extends PureComponent {
     render() {
         return (

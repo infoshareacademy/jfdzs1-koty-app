@@ -2,7 +2,6 @@ import React, {PureComponent} from 'react';
 import './DashboardNavbar.style.css';
 import Menu from "./Menu.component";
 
-
 class Navbar extends PureComponent {
 
     constructor(props) {

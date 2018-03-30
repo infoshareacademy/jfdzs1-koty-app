@@ -1,6 +1,5 @@
 import { SET_GRANTS, ERROR_GRANTS } from '../../types/types.js'
 
-
 const setGrants = (grants) => {
     return {
         type: SET_GRANTS,
@@ -14,7 +13,6 @@ const errorGrants = (error) => {
         error
     }
 }
-
 
 export const getGrants = () => {
     const url = 'https://unijne-dotacje.firebaseio.com/grants.json';

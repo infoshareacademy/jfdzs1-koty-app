@@ -1,14 +1,11 @@
 import React, {PureComponent} from 'react';
 
-
 class GrantsComponent extends PureComponent {
-
     render() {
         const {grants} = this.props;
         if (grants) {
             return (
                 <MobileTearSheet>
-
                     <List>
                         <Subheader inset={true}>Files</Subheader>
                         <ListItem
