@@ -14,14 +14,15 @@ class GrantsComponent extends PureComponent {
     }
     render() {
         const {grants} = this.props;
+
         if (grants) {
             return (
-                    <List>
-                        <Subheader inset={true}
-                                   style={styles.grantsList}>
-                                    LISTA DOTACJI
-                        </Subheader>
-                        {grants.map((grant, index) =>
+                <List>
+                    <Subheader inset={true}
+                               style={styles.grantsList}>
+                               LISTA DOTACJI
+                    </Subheader>
+                    {grants.map((grant, index) =>
                             <ListItem
                                 key={index}
                                 leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
@@ -31,7 +32,7 @@ class GrantsComponent extends PureComponent {
                                 style={styles.grantsList}
                             />
                         )}
-                    </List>
+                </List>
             )
         } else {
             return (
