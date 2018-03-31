@@ -12,6 +12,7 @@ class GrantsComponent extends PureComponent {
         super.componentDidMount && super.componentDidMount();
         this.props.getGrants();
     }
+
     render() {
         const {grants} = this.props;
 
@@ -26,11 +27,13 @@ class GrantsComponent extends PureComponent {
                             <ListItem
                                 key={index}
                                 leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
-                                rightIcon={<ActionInfo />}
+                                rightIcon={<ActionInfo/>}
                                 primaryText={grant.name}
                                 secondaryText={`Odbiorca: ${grant.recipient}`}
                                 style={styles.grantsList}
-                            />
+                                onClick={() =>
+                                    alert(grant.target)}>
+                            </ListItem>
                         )}
                 </List>
             )

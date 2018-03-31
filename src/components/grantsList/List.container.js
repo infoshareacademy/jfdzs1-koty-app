@@ -8,11 +8,11 @@ const mapStateToProps = state => ({
     grants: state.grants
 });
 
-const mapDispatchToprops = dispatch => ({
+const mapDispatchToProps = dispatch => ({
     getGrants: () => dispatch(getGrants())
 });
 
 export default connect(
     mapStateToProps,
-    mapDispatchToprops
+    mapDispatchToProps
 )(GrantsComponent);
