@@ -22,10 +22,11 @@ export default {
         marginTop:'5vh',
         color: appColors.dark
     },
-    // centerItalic: {
-    //     textAlign: 'center',
-    //     fontStyle: 'italic'
-    // },
+   logo: {
+        width:'10vw',
+        height:'5vh',
+       marginTop: '0.5em'
+   },
     appBar: {
         backgroundColor: appColors.lightBlue
     },

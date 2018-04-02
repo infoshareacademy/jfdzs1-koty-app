@@ -6,8 +6,22 @@ import ActionAssignment from 'material-ui/svg-icons/action/assignment';
 import Subheader from 'material-ui/Subheader';
 import styles from "../../Styles";
 import { appColors } from "../../Styles";
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 
 class GrantsComponent extends PureComponent {
+    state = {
+        open: false,
+    };
+
+    handleOpen = () => {
+        this.setState({open: true});
+    };
+
+    handleClose = () => {
+        this.setState({open: false});
+    };
+
     componentWillMount() {
         super.componentDidMount && super.componentDidMount();
         this.props.getGrants();
@@ -15,6 +29,14 @@ class GrantsComponent extends PureComponent {
 
     render() {
         const {grants} = this.props;
+        const actions = [
+            <FlatButton
+                label="Zamknij"
+                primary={true}
+                keyboardFocused={true}
+                onClick={this.handleClose}
+            />,
+        ];
 
         if (grants) {
             return (
@@ -31,8 +53,16 @@ class GrantsComponent extends PureComponent {
                                 primaryText={grant.name}
                                 secondaryText={`Odbiorca: ${grant.recipient}`}
                                 style={styles.grantsList}
-                                onClick={() =>
-                                    alert(grant.target)}>
+                                onClick={this.handleOpen}>
+                                <Dialog
+                                    key={index}
+                                    title={grant.name}
+                                    actions={actions}
+                                    modal={false}
+                                    open={this.state.open}
+                                    onRequestClose={this.handleClose}>
+                                    {grant.target}
+                                </Dialog>
                             </ListItem>
                         )}
                 </List>

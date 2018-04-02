@@ -1,9 +1,20 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
+import Dialog from 'material-ui/Dialog';
 
-const GrantsItemComponent = ({ grant }) => {
+class GrantsItem extends PureComponent {
+    render() {
+
         return (
-            <div>{this.props.grant.target}</div>
+            <div>
+                <Dialog
+                    {...this.props.modal}
+                    {...this.props.open}
+                    {...this.props.onRequestClose}>
+                    {...this.props.text}
+                </Dialog>
+            </div>
         );
-};
+    }
+}
 
-export default GrantsItemComponent;
+export default GrantsItem;

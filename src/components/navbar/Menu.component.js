@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
+import image from '../../../images/logo_biale_poziom.svg';
 import styles from "../../Styles";
 
 class Menu extends PureComponent {
@@ -11,7 +12,7 @@ class Menu extends PureComponent {
 
             <div>
                 <AppBar
-                    title="Menu"
+                    title={<img src={image} className="App-logo" alt="logo" style={styles.logo}/>}
                     onLeftIconButtonClick={this.props.taggleMenu}
                     style={styles.appBar}>
                 </AppBar>
