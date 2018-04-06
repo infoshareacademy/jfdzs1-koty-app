@@ -25,7 +25,8 @@ export default {
    logo: {
         width:'10vw',
         height:'5vh',
-       marginTop: '0.5em'
+        marginTop: '0.5em',
+        marginLeft: '1em'
    },
     appBar: {
         backgroundColor: appColors.lightBlue
@@ -36,9 +37,14 @@ export default {
     },
     sideBar: {
         backgroundColor: appColors.grey,
-        fontFamily: appFont,
-        fontSize: '1.1em'
+        fontFamily: appFont
     },
+    sideBarItem: {
+        textDecoration: 'none',
+        fontSize: '1.2em',
+        color: appColors.lightBlue,
+        letterSpacing: '0.1em'
+    }
     // input: {
     //     display: 'block',
     //     marginBottom: '5px',

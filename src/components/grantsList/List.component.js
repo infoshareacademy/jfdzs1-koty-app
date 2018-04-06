@@ -45,24 +45,30 @@ class GrantsComponent extends PureComponent {
                                style={styles.grantsList}>
                                LISTA DOTACJI
                     </Subheader>
-                    {grants.map((grant, index) =>
+                    {grants.map((grant) =>
                             <ListItem
-                                key={index}
+                                key={grant.id}
                                 leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
                                 rightIcon={<ActionInfo/>}
                                 primaryText={grant.name}
                                 secondaryText={`Odbiorca: ${grant.recipient}`}
                                 style={styles.grantsList}
-                                onClick={this.handleOpen}>
-                                <Dialog
-                                    key={index}
-                                    title={grant.name}
-                                    actions={actions}
-                                    modal={false}
-                                    open={this.state.open}
-                                    onRequestClose={this.handleClose}>
-                                    {grant.target}
-                                </Dialog>
+                                onClick={()=> {
+                                    <Dialog
+                                        key={grant.id}
+                                        title={grant.name}
+                                        actions={actions}
+                                        modal={false}
+                                        open={this.state.open}
+                                        onRequestClose={this.handleClose}
+                                    >
+                                        {grant.target}
+                                    </Dialog>
+                                    this.handleOpen();
+                                }
+                                    }
+                                    >
+
                             </ListItem>
                         )}
                 </List>

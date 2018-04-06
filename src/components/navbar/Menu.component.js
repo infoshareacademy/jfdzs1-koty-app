@@ -22,8 +22,8 @@ class Menu extends PureComponent {
                     docked={false}
                     width={200}
                     style={styles.sideBar}>
-                    <MenuItem><Link to="/login">Login</Link></MenuItem>
-                    <MenuItem><Link to="/grants">Lista dotacji</Link></MenuItem>
+                    <MenuItem><Link to="/login" style={styles.sideBarItem}>Login</Link></MenuItem>
+                    <MenuItem><Link to="/grants" style={styles.sideBarItem}>Lista dotacji</Link></MenuItem>
                 </Drawer>
             </div>
         );
