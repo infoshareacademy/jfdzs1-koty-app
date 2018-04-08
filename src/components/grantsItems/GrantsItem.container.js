@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
 
-import { showItem } from './GrantsItem.action';
+import { getGrants } from '../grantsList/List.action';
 
-import GrantsItemComponent from "./GrantsItem.component";
+import GrantsItem from './GrantsItem.component';
 
-const mapDispatchToprops = dispatch => ({
-    grantsItem: () => dispatch(showItem())
+const mapStateToProps = state => ({
+    grants: state.grants
+});
+
+const mapDispatchToProps = dispatch => ({
+    getGrants: () => dispatch(getGrants())
 });
 
 export default connect(
-    undefined,
-    mapDispatchToprops
-)(GrantsItemComponent);
+    mapStateToProps,
+    mapDispatchToProps
+)(GrantsItem);
