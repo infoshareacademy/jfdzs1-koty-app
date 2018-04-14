@@ -3,7 +3,7 @@ export const appColors = {
     blue: '#0F3F76',
     lightBlue: '#03A687',
     grey: '#BCBEC0',
-    lightGray: '#f0f3f5',
+    lightGray: '#f1f1f1',
     dark: '#333333'
 
 };
@@ -20,7 +20,8 @@ export default {
         width: '60vw',
         marginLeft: '20vw',
         marginTop:'5vh',
-        color: appColors.dark
+        color: appColors.dark,
+        textDecoration: 'none',
     },
    logo: {
         width:'10vw',
@@ -43,26 +44,20 @@ export default {
         textDecoration: 'none',
         fontSize: '1.2em',
         color: appColors.lightBlue,
-        letterSpacing: '0.1em'
+    },
+    listItem:{
+        fontSize: '1.5em',
+        color: appColors.lightGray,
+        width: '60vw',
+        marginLeft: '20vw',
+        marginTop:'5vh',
+        padding: '1em',
+        backgroundColor: appColors.blue
+    },
+    itemInfo: {
+        marginTop: '0.5em'
+    },
+    link: {
+        textDecoration: 'none',
     }
-    // input: {
-    //     display: 'block',
-    //     marginBottom: '5px',
-    //     fontFamily: appFont,
-    //     color: appColors.dark
-    // },
-    // link: {
-    //     color: appColors.primary,
-    //     fontFamily: appFont,
-    //     fontSize: '1.15em',
-    //     textDecoration: 'none',
-    //     margin: '1em 0'
-    // },
-    // dashboard: {
-    //     fontFamily: appFont,
-    //     color: appColors.dark,
-    //     padding: '40px',
-    //     width: '80vw',
-    //     margin: '50px auto 0 auto'
-    // }
 }

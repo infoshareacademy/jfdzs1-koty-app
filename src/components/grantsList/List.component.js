@@ -7,20 +7,8 @@ import Subheader from 'material-ui/Subheader';
 import { Link } from 'react-router-dom';
 import styles from "../../Styles";
 import { appColors } from "../../Styles";
-import FlatButton from 'material-ui/FlatButton';
 
 class GrantsComponent extends PureComponent {
-    state = {
-        open: false,
-    };
-
-    handleOpen = () => {
-        this.setState({open: true});
-    };
-
-    handleClose = () => {
-        this.setState({open: false});
-    };
 
     componentWillMount() {
         this.props.getGrants();
@@ -28,14 +16,6 @@ class GrantsComponent extends PureComponent {
 
     render() {
         const {grants} = this.props;
-        const actions = [
-            <FlatButton
-                label="Zamknij"
-                primary={true}
-                keyboardFocused={true}
-                onClick={this.handleClose}
-            />,
-        ];
 
         if (grants) {
             console.log(grants);
@@ -48,7 +28,7 @@ class GrantsComponent extends PureComponent {
                     {grants.map((grant, key) => {
                         console.log(grant, key)
                         return (
-                            <Link to={`/grant/${grant.id}`}>
+                            <Link style={styles.link} to={`/grant/${grant.id}`}>
                                 <ListItem
                                     key={grant.id}
                                     leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
@@ -62,8 +42,7 @@ class GrantsComponent extends PureComponent {
                             </Link>
                         )
                     }
-
-                        )}
+                    )}
                 </List>
             )
         } else {

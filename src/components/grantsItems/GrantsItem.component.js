@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-
+import styles from "../../Styles";
 
 class GrantsItem extends PureComponent {
     render() {
@@ -10,16 +10,14 @@ class GrantsItem extends PureComponent {
                 grant = item;
             }
         })
-
         console.log(grant);
-
-
         return (
-            <div>
-
+            <div style={styles.listItem}>
+                <div style={styles.itemInfo}>{`Tytuł: ${grant.name}`}</div>
+                <div style={styles.itemInfo}>{`Odbiorca: ${grant.recipient}`}</div>
+                <div style={styles.itemInfo}>{grant.target}</div>
             </div>
         );
     }
 }
-
 export default GrantsItem;

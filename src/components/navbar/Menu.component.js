@@ -24,6 +24,10 @@ class Menu extends PureComponent {
                     style={styles.sideBar}>
                     <MenuItem><Link to="/login" style={styles.sideBarItem}>Login</Link></MenuItem>
                     <MenuItem><Link to="/grants" style={styles.sideBarItem}>Lista dotacji</Link></MenuItem>
+                    <MenuItem><Link to="/grants" style={styles.sideBarItem}>Ulubione</Link></MenuItem>
+                    <MenuItem><Link to="/grants" style={styles.sideBarItem}>Aktualności</Link></MenuItem>
+                    <MenuItem><Link to="/grants" style={styles.sideBarItem}>Pliki do pobrania</Link></MenuItem>
+                    <MenuItem><Link to="/grants" style={styles.sideBarItem}>Wyloguj</Link></MenuItem>
                 </Drawer>
             </div>
         );
