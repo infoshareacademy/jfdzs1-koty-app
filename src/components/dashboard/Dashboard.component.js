@@ -5,7 +5,7 @@ class Dashboard extends PureComponent {
 
    render() {
         return (
-            <div>Dashboard</div>
+            <div></div>
         );
     }
 }

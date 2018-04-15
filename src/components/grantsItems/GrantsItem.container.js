@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
-import { getGrants } from './List.action';
+import { getGrants } from '../grantsList/List.action';
 
-import GrantsComponent from './List.component';
+import GrantsItem from './GrantsItem.component';
 
 const mapStateToProps = state => ({
     grants: state.grants
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(GrantsComponent);
+)(GrantsItem);
