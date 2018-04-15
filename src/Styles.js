@@ -22,6 +22,7 @@ export default {
         marginTop:'5vh',
         color: appColors.dark,
         textDecoration: 'none',
+        textAlign: 'left'
     },
    logo: {
         width:'10vw',

@@ -28,7 +28,7 @@ class GrantsComponent extends PureComponent {
         const {grants} = this.props;
         const filterListGrants = grants.filter(
             (grant) =>{
-                return grant.name.toLowerCase().indexOf(this.state.search) !== -1;
+                return grant.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }
         );
 
@@ -40,31 +40,26 @@ class GrantsComponent extends PureComponent {
                            placeholder="search"
                            value={this.state.search}
                            onChange={this.upDateSearch.bind(this)}/>
-                    </div>
-                    <Subheader inset={true}
-                               style={styles.grantsList}>
-                               LISTA DOTACJI
-                    </Subheader>
-                    {grants.map((grant) => {
-                        return (
-                            <Link style={styles.link} to={`/grant/${grant.id}`}>
-                                <ListItem
-                                    key={grant.id}
-                                    leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
-                                    rightIcon={<ActionInfo/>}
-                                    primaryText={grant.name}
-                                    secondaryText={`Odbiorca: ${grant.recipient}`}
-                                    style={styles.grantsList}
-                                >
+                        <Subheader inset={true}
+                                   style={styles.grantsList}>
+                            LISTA DOTACJI
 
-                                </ListItem>
+                        </Subheader>
+                        {filterListGrants.map((grant) =>
+                            <Link style={styles.link} to={`/grant/${grant.id}`}>
+                            <ListItem
+                                key={grant.id}
+                                leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
+                                rightIcon={<ActionInfo />}
+                                primaryText={grant.name}
+                                secondaryText={`Odbiorca: ${grant.recipient}`}
+                                style={styles.grantsList}
+                            />
                             </Link>
-                        )
-                    }
-                    )}
+                        )}
+                    </div>
                 </List>
-            )
-        } else {
+        )} else {
             return (
                 <section>
                 </section>
