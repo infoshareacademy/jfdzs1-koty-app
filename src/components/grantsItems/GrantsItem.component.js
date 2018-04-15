@@ -10,7 +10,6 @@ class GrantsItem extends PureComponent {
                 grant = item;
             }
         })
-        console.log(grant);
         return (
             <div style={styles.listItem}>
                 <div style={styles.itemInfo}>{`Tytuł: ${grant.name}`}</div>

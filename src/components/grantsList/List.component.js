@@ -33,7 +33,6 @@ class GrantsComponent extends PureComponent {
         );
 
         if (grants) {
-            console.log(grants);
             return (
                 <List>
                    <div className="listContent">
@@ -41,29 +40,12 @@ class GrantsComponent extends PureComponent {
                            placeholder="search"
                            value={this.state.search}
                            onChange={this.upDateSearch.bind(this)}/>
-                    <List>
-                        <Subheader inset={true}
-                                   style={styles.grantsList}>
-                            LISTA DOTACJI
-
-                        </Subheader>
-                        {filterListGrants.map((grant, index) =>
-                            <ListItem
-                                key={index}
-                                leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
-                                rightIcon={<ActionInfo />}
-                                primaryText={grant.name}
-                                secondaryText={`Odbiorca: ${grant.recipient}`}
-                                style={styles.grantsList}
-                            />
-                        )}                    
-                </div>
+                    </div>
                     <Subheader inset={true}
                                style={styles.grantsList}>
                                LISTA DOTACJI
                     </Subheader>
-                    {grants.map((grant, key) => {
-                        console.log(grant, key)
+                    {grants.map((grant) => {
                         return (
                             <Link style={styles.link} to={`/grant/${grant.id}`}>
                                 <ListItem
