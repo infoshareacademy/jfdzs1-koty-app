@@ -1,6 +1,5 @@
 import React, {PureComponent} from 'react';
 import {List, ListItem} from 'material-ui/List';
-import ActionInfo from 'material-ui/svg-icons/action/info';
 import Avatar from 'material-ui/Avatar';
 import ActionAssignment from 'material-ui/svg-icons/action/assignment';
 import Subheader from 'material-ui/Subheader';
@@ -13,15 +12,28 @@ class GrantsComponent extends PureComponent {
     constructor(){
         super();
         this.state ={
-            search: ''
+            search: '',
+            favorite: {},
         };
-    }
-    upDateSearch(event){
-        this.setState({search: event.target.value});
     }
 
     componentWillMount() {
         this.props.getGrants();
+    }
+
+    setFavourite(grants){
+        let selected;
+        grants.map((item) => {
+            if( item.id === this.id) {
+                selected = item;
+            }
+        })
+        console.log('selected: ' + selected);
+    }
+
+
+    upDateSearch(event){
+        this.setState({search: event.target.value});
     }
 
     render() {
@@ -33,6 +45,7 @@ class GrantsComponent extends PureComponent {
         );
 
         if (grants) {
+            console.log(grants);
             return (
                 <List>
                    <div className="listContent">
@@ -43,19 +56,26 @@ class GrantsComponent extends PureComponent {
                         <Subheader inset={true}
                                    style={styles.grantsList}>
                             LISTA DOTACJI
+                            <button style={styles.addFavourite}>Dodaj do ulubionych</button>
 
                         </Subheader>
                         {filterListGrants.map((grant) =>
-                            <Link style={styles.link} to={`/grant/${grant.id}`}>
-                            <ListItem
-                                key={grant.id}
-                                leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
-                                rightIcon={<ActionInfo />}
-                                primaryText={grant.name}
-                                secondaryText={`Odbiorca: ${grant.recipient}`}
-                                style={styles.grantsList}
-                            />
-                            </Link>
+                            <div style={styles.listItemDiv}>
+                                <Link style={styles.link} to={`/grant/${grant.id}`}>
+                                    <ListItem
+                                        key={grant.id}
+                                        leftAvatar={<Avatar icon={<ActionAssignment />} backgroundColor={appColors.blue} />}
+                                        primaryText={grant.name}
+                                        secondaryText={`Odbiorca: ${grant.recipient}`}
+                                        style={styles.grantsList}
+                                    />
+                                </Link>
+                                <button
+                                    id={grant.id}
+                                    style={styles.checkbox}
+                                    onClick={this.setFavourite}>
+                                </button>
+                            </div>
                         )}
                     </div>
                 </List>

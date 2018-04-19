@@ -53,12 +53,31 @@ export default {
         marginLeft: '20vw',
         marginTop:'5vh',
         padding: '1em',
-        backgroundColor: appColors.blue
+        backgroundColor: appColors.blue,
     },
     itemInfo: {
         marginTop: '0.5em'
     },
     link: {
         textDecoration: 'none',
+        float: 'left',
+    },
+    listItemDiv:{
+        width: '100%',
+    },
+    checkbox: {
+        marginRight:'20em',
+        marginTop: '4.5em',
+        float: 'right',
+        width: '2em',
+        height: '2em',
+        border:'2em solid appColors.blue',
+        backgroundColor: 'none'
+    },
+    addFavourite: {
+        float: 'right',
+        width: '10em',
+        fontSize: '0.8em',
+        height: '2em'
     }
 }
