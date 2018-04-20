@@ -21,15 +21,7 @@ class GrantsComponent extends PureComponent {
         this.props.getGrants();
     }
 
-    setFavourite(grants){
-        let selected;
-        grants.map((item) => {
-            if( item.id === this.id) {
-                selected = item;
-            }
-        })
-        console.log('selected: ' + selected);
-    }
+
 
 
     upDateSearch(event){
@@ -43,6 +35,18 @@ class GrantsComponent extends PureComponent {
                 return grant.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }
         );
+
+        // const setFavorite = (grants) => {
+        //     let selected;
+        //     console.log('grants: ' + grants);
+        //     grants.map((item) => {
+        //         if( item.id === this.id) {
+        //             selected = item;
+        //         }
+        //     })
+        //     console.log('selected: ' + selected);
+        //     console.log('GRANTS: ' + grants);
+        // }
 
         if (grants) {
             console.log(grants);
@@ -60,7 +64,7 @@ class GrantsComponent extends PureComponent {
 
                         </Subheader>
                         {filterListGrants.map((grant) =>
-                            <div style={styles.listItemDiv}>
+                            <div style={styles.listItemDiv} key={grant.id}>
                                 <Link style={styles.link} to={`/grant/${grant.id}`}>
                                     <ListItem
                                         key={grant.id}
@@ -72,8 +76,9 @@ class GrantsComponent extends PureComponent {
                                 </Link>
                                 <button
                                     id={grant.id}
+                                    key={grant.id}
                                     style={styles.checkbox}
-                                    onClick={this.setFavourite}>
+                                    onClick={(grant)=> this.setState({favorite: {...grant} })}>
                                 </button>
                             </div>
                         )}
