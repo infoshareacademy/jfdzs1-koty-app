@@ -13,7 +13,7 @@ class GrantsComponent extends PureComponent {
         super();
         this.state ={
             search: '',
-            favorite: {},
+            favorite: [],
         };
     }
 
@@ -36,17 +36,7 @@ class GrantsComponent extends PureComponent {
             }
         );
 
-        // const setFavorite = (grants) => {
-        //     let selected;
-        //     console.log('grants: ' + grants);
-        //     grants.map((item) => {
-        //         if( item.id === this.id) {
-        //             selected = item;
-        //         }
-        //     })
-        //     console.log('selected: ' + selected);
-        //     console.log('GRANTS: ' + grants);
-        // }
+       console.log("favorite:", this.state.favorite);
 
         if (grants) {
             console.log(grants);
@@ -78,7 +68,7 @@ class GrantsComponent extends PureComponent {
                                     id={grant.id}
                                     key={grant.id}
                                     style={styles.checkbox}
-                                    onClick={(grant)=> this.setState({favorite: {...grant} })}>
+                                    onClick={(grant)=> this.setState({favorite: [...this.state.favorite,grant.id]})}>{grant.id}
                                 </button>
                             </div>
                         )}
