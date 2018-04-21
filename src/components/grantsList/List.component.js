@@ -12,17 +12,30 @@ class GrantsComponent extends PureComponent {
     constructor(){
         super();
         this.state ={
-            search: '',
-            favorite: [],
+            search: "",
+            favorites: [],
         };
-    }
+    };
+    saveFavorites = () => {
+        localStorage.setItem('favorites', JSON.stringify(this.state.favorites));
+    };
 
     componentWillMount() {
         this.props.getGrants();
-    }
+    };
 
+    componentWillUpdate() {
+        console.log('favorites: ', this.state.favorites);
+    };
 
-
+    addGrantId =(event) => {
+        if (this.state.favorites.includes(event.target.id) === false){
+            this.setState({
+                favorites: [...this.state.favorites, event.target.id],
+            });
+        }
+        event.currentTarget.style.backgroundColor = '#0F3F76';
+    };
 
     upDateSearch(event){
         this.setState({search: event.target.value});
@@ -36,8 +49,6 @@ class GrantsComponent extends PureComponent {
             }
         );
 
-       console.log("favorite:", this.state.favorite);
-
         if (grants) {
             console.log(grants);
             return (
@@ -50,8 +61,11 @@ class GrantsComponent extends PureComponent {
                         <Subheader inset={true}
                                    style={styles.grantsList}>
                             LISTA DOTACJI
-                            <button style={styles.addFavourite}>Dodaj do ulubionych</button>
-
+                            <button
+                                onClick={this.saveFavorites}
+                                style={styles.addFavourite}>
+                                Dodaj do ulubionych
+                            </button>
                         </Subheader>
                         {filterListGrants.map((grant) =>
                             <div style={styles.listItemDiv} key={grant.id}>
@@ -68,7 +82,7 @@ class GrantsComponent extends PureComponent {
                                     id={grant.id}
                                     key={grant.id}
                                     style={styles.checkbox}
-                                    onClick={(grant)=> this.setState({favorite: [...this.state.favorite,grant.id]})}>{grant.id}
+                                    onClick={this.addGrantId}>
                                 </button>
                             </div>
                         )}
