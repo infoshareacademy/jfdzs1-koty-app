@@ -46,7 +46,7 @@ export default {
         fontSize: '1.2em',
         color: appColors.lightBlue,
     },
-    listItem:{
+    listItem: {
         fontSize: '1.5em',
         color: appColors.lightGray,
         width: '60vw',
@@ -72,12 +72,33 @@ export default {
         width: '2em',
         height: '2em',
         border:'2em solid appColors.blue',
-        backgroundColor: 'none'
+        borderRadius: '8px',
+        backgroundColor: 'white'
     },
     addFavourite: {
         float: 'right',
         width: '10em',
         fontSize: '0.8em',
-        height: '2em'
+        height: '2em',
+        border:'2em solid appColors.blue',
+        borderRadius: '8px',
+        color: appColors.blue,
+        backgroundColor: 'white'
+    },
+    mouseOver:{
+        backgroundColor: appColors.lightBlue,
+    },
+    favoritesRegion: {
+        fontSize: '1.5em',
+        color: appColors.lightGray,
+        width: '60vw',
+        marginLeft: '20vw',
+        marginTop:'5vh',
+        padding: '3em',
+        backgroundColor: appColors.blue,
+    },
+    favoritesItem: {
+        paddingTop: '1em',
+        borderBottom:'2em solid appColors.blue',
     }
 }

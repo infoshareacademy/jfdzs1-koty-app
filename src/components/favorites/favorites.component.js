@@ -1,11 +1,13 @@
 import React, {PureComponent} from 'react';
-
+import styles from "../../Styles";
 
 class Favorites extends PureComponent {
 
     renderMap = (grants, items) => grants.map((grant) => items.map((item) => {
         if (grant.id === item) {
-            return <div>{grant.id}</div>;
+            return <div
+                    style={styles.favoritesItem}
+                    key={grant.id}>{grant.name}</div>;
         }
     }));
 
@@ -17,7 +19,7 @@ class Favorites extends PureComponent {
 
 
         return (
-            <div>Favorites{this.renderMap(grants, items)}</div>
+            <div style={styles.favoritesRegion}>LISTA WYBRANYCH PRZEZ CIEBIE DOTACJI{this.renderMap(grants, items)}</div>
 
         );
     }

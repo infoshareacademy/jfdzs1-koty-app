@@ -34,6 +34,7 @@ class GrantsComponent extends PureComponent {
                 favorites: [...this.state.favorites, event.target.id],
             });
         }
+        //TODO make the background button toggle on click and toggle setState
         event.currentTarget.style.backgroundColor = '#0F3F76';
     };
 
