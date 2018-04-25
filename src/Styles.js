@@ -71,8 +71,8 @@ export default {
         float: 'right',
         width: '2em',
         height: '2em',
-        border:'2em solid appColors.blue',
-        borderRadius: '8px',
+        border:'0.5em solid appColors.blue',
+        borderRadius: '13px',
         backgroundColor: 'white'
     },
     addFavourite: {
@@ -80,7 +80,7 @@ export default {
         width: '10em',
         fontSize: '0.8em',
         height: '2em',
-        border:'2em solid appColors.blue',
+        border:'0.5em solid appColors.blue',
         borderRadius: '8px',
         color: appColors.blue,
         backgroundColor: 'white'
@@ -100,5 +100,12 @@ export default {
     favoritesItem: {
         paddingTop: '1em',
         borderBottom:'2em solid appColors.blue',
+    },
+    inputSearch: {
+        fontSize: '0.8em',
+        height: '2em',
+        border: '0.5em solid appColors.blue',
+        borderRadius: '8px',
+        backgroundColor: 'white'
     }
 }

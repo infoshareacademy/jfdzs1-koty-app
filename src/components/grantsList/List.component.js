@@ -18,14 +18,13 @@ class GrantsComponent extends PureComponent {
     };
     saveFavorites = () => {
         localStorage.setItem('favorites', JSON.stringify(this.state.favorites));
+        const nodeList = document.querySelectorAll(".add-grant");
+        const nodeListToArray = Array.apply(null, nodeList);
+        nodeListToArray.map( item => item.style.backgroundColor = 'white');
     };
 
     componentWillMount() {
         this.props.getGrants();
-    };
-
-    componentWillUpdate() {
-        console.log('favorites: ', this.state.favorites);
     };
 
     addGrantId =(event) => {
@@ -33,16 +32,19 @@ class GrantsComponent extends PureComponent {
             this.setState({
                 favorites: [...this.state.favorites, event.target.id],
             });
+            event.currentTarget.style.backgroundColor = '#0F3F76';
+        } else {
+                let filteredArray = this.state.favorites.filter(item => item !== event.target.id);
+                this.setState({favorites: filteredArray});
+                event.currentTarget.style.backgroundColor = "white";
         }
-        //TODO make the background button toggle on click and toggle setState
-        event.currentTarget.style.backgroundColor = '#0F3F76';
     };
 
     upDateSearch(event){
         this.setState({search: event.target.value});
     }
 
-    render() {
+    render(){
         const {grants} = this.props;
         const filterListGrants = grants.filter(
             (grant) =>{
@@ -57,6 +59,7 @@ class GrantsComponent extends PureComponent {
                    <div className="listContent">
                     <input type="text"
                            placeholder="search"
+                           style={styles.inputSearch}
                            value={this.state.search}
                            onChange={this.upDateSearch.bind(this)}/>
                         <Subheader inset={true}
@@ -80,6 +83,7 @@ class GrantsComponent extends PureComponent {
                                     />
                                 </Link>
                                 <button
+                                    className="add-grant"
                                     id={grant.id}
                                     key={grant.id}
                                     style={styles.checkbox}
