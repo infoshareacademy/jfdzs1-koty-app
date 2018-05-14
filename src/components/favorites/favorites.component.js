@@ -14,17 +14,10 @@ class Favorites extends PureComponent {
     render() {
         const { grants } = this.props;
         let items = JSON.parse(localStorage.getItem('favorites'));
-        console.log('Favo: ', items);
-        console.log('Gra: ', grants);
-
 
         return (
             <div style={styles.favoritesRegion}>LISTA WYBRANYCH PRZEZ CIEBIE DOTACJI{this.renderMap(grants, items)}</div>
-
         );
     }
 }
-
 export default Favorites;
-
-

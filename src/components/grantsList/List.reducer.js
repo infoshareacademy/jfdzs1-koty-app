@@ -9,6 +9,5 @@ const grantsList = (state = [], action) => {
         default:
             return state;
     }
-}
-
+};
 export default grantsList;

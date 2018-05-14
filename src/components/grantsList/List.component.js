@@ -22,11 +22,9 @@ class GrantsComponent extends PureComponent {
         const nodeListToArray = Array.apply(null, nodeList);
         nodeListToArray.map( item => item.style.backgroundColor = 'white');
     };
-
     componentWillMount() {
         this.props.getGrants();
     };
-
     addGrantId =(event) => {
         if (this.state.favorites.includes(event.target.id) === false){
             this.setState({
@@ -39,7 +37,6 @@ class GrantsComponent extends PureComponent {
                 event.currentTarget.style.backgroundColor = "white";
         }
     };
-
     upDateSearch(event){
         this.setState({search: event.target.value});
     }
@@ -51,9 +48,7 @@ class GrantsComponent extends PureComponent {
                 return grant.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
             }
         );
-
         if (grants) {
-            console.log(grants);
             return (
                 <List>
                    <div className="listContent">
@@ -99,7 +94,6 @@ class GrantsComponent extends PureComponent {
                 </section>
             )
         }
-
     }
 }
 export default GrantsComponent;
