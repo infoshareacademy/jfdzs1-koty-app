@@ -13,7 +13,7 @@ class GrantsComponent extends PureComponent {
         super();
         this.state ={
             search: "",
-            favorites: [],
+            favorites: []
         };
     };
     saveFavorites = () => {
@@ -32,9 +32,9 @@ class GrantsComponent extends PureComponent {
             });
             event.currentTarget.style.backgroundColor = '#0F3F76';
         } else {
-                let filteredArray = this.state.favorites.filter(item => item !== event.target.id);
-                this.setState({favorites: filteredArray});
-                event.currentTarget.style.backgroundColor = "white";
+            let filteredArray = this.state.favorites.filter(item => item !== event.target.id);
+            this.setState({favorites: filteredArray});
+            event.currentTarget.style.backgroundColor = "white";
         }
     };
     upDateSearch(event){
@@ -53,12 +53,13 @@ class GrantsComponent extends PureComponent {
                 <List>
                    <div className="listContent">
                     <input type="text"
-                           placeholder="search"
-                           style={styles.inputSearch}
-                           value={this.state.search}
-                           onChange={this.upDateSearch.bind(this)}/>
-                        <Subheader inset={true}
-                                   style={styles.grantsList}>
+                        placeholder="search"
+                        style={styles.inputSearch}
+                        value={this.state.search}
+                        onChange={this.upDateSearch.bind(this)}/>
+                        <Subheader
+                            inset={true}
+                            style={styles.grantsList}>
                             LISTA DOTACJI
                             <button
                                 onClick={this.saveFavorites}

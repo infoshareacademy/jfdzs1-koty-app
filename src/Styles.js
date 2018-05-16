@@ -5,7 +5,6 @@ export const appColors = {
     grey: '#BCBEC0',
     lightGray: '#f1f1f1',
     dark: '#333333'
-
 };
 
 export const appFont = "'Roboto', sans-serif";
@@ -44,7 +43,7 @@ export default {
     sideBarItem: {
         textDecoration: 'none',
         fontSize: '1.2em',
-        color: appColors.lightBlue,
+        color: appColors.lightBlue
     },
     listItem: {
         fontSize: '1.5em',
@@ -53,17 +52,17 @@ export default {
         marginLeft: '20vw',
         marginTop:'5vh',
         padding: '1em',
-        backgroundColor: appColors.blue,
+        backgroundColor: appColors.blue
     },
     itemInfo: {
         marginTop: '0.5em'
     },
     link: {
         textDecoration: 'none',
-        float: 'left',
+        float: 'left'
     },
     listItemDiv:{
-        width: '100%',
+        width: '100%'
     },
     checkbox: {
         marginRight:'20em',
@@ -95,11 +94,11 @@ export default {
         marginLeft: '20vw',
         marginTop:'5vh',
         padding: '3em',
-        backgroundColor: appColors.blue,
+        backgroundColor: appColors.blue
     },
     favoritesItem: {
         paddingTop: '1em',
-        borderBottom:'2em solid appColors.blue',
+        borderBottom:'2em solid appColors.blue'
     },
     inputSearch: {
         fontSize: '0.8em',

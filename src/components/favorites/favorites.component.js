@@ -6,8 +6,8 @@ class Favorites extends PureComponent {
     renderMap = (grants, items) => grants.map((grant) => items.map((item) => {
         if (grant.id === item) {
             return <div
-                    style={styles.favoritesItem}
-                    key={grant.id}>{grant.name}</div>;
+                style={styles.favoritesItem}
+                key={grant.id}>{grant.name}</div>;
         }
     }));
 
